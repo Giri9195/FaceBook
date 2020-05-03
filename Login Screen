@@ -1,0 +1,51 @@
+package Ojects;
+
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+
+public class LoginClass {
+
+	@Test
+	public void login() throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Giri\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://www.flipkart.com/");
+
+		
+		PageFactory.initElements(driver, LoginObjects.class);
+		LoginObjects.username.sendKeys("ggiridharan08@gmail.com");
+		LoginObjects.password.sendKeys("9597565068");
+		LoginObjects.login.click();
+		
+		
+		/*LoginObjects.username(driver).sendKeys(("ggiridharan08@gmail.com"));
+		LoginObjects.password(driver).sendKeys("9597565068");
+		LoginObjects.login(driver).click();
+		*/
+		
+		
+		
+		
+		/*WebElement username=driver.findElement(By.xpath("/html/body/div[2]/div/div/div/div/div[2]/div/form/div[1]/input"));
+		username.sendKeys("ggiridharan08@gmail.com");
+
+		WebElement password=driver.findElement(By.xpath("/html/body/div[2]/div/div/div/div/div[2]/div/form/div[2]/input"));
+		password.sendKeys("9597565068");
+
+		WebElement login1=driver.findElement(By.xpath("/html/body/div[2]/div/div/div/div/div[2]/div/form/div[3]/button"));
+		login1.click();
+
+		WebElement ele=driver.findElement(By.xpath("//*[@id=\'container\']/div/div[2]/div/ul/li[1]"));
+		ele.click(); */
+		
+		
+		
+	}
+
+
+
+}
